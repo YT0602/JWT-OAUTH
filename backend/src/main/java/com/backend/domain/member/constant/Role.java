@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public enum Role {
 
-    USER, ADMIN, GUEST;
+    MEMBER, ADMIN, GUEST;
 
     public static Role from(String role) {
         return Role.valueOf(role);

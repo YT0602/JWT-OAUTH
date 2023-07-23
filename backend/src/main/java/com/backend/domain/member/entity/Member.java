@@ -61,9 +61,16 @@ public class Member extends BaseEntity {
     public void updateProfileImage(String profile_image){
         this.profile_image = profile_image;
     }
+    public void updatePhoneNumber(String phone_number) {
+        this.phone_number = phone_number;
+    }
 
     public void updateStamp_cnt(int stamp_cnt){
         this.stamp_cnt = stamp_cnt;
+    }
+
+    public void updateRole(Role role){
+        this.role = role;
     }
 
     public void updateRefreshToken(JwtDto jwtDto) {

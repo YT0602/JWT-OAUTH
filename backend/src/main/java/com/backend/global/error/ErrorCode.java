@@ -16,6 +16,7 @@ public enum ErrorCode {
     NOT_EXISTS_AUTHORIZATION(HttpStatus.UNAUTHORIZED, "Auth-006", "Authorization Header가 없습니다."),
     NOT_MATCH_BEARER_GRANT_TYPE(HttpStatus.UNAUTHORIZED, "Auth-007", "인증 타입이 Bearer 타입이 아닙니다."),
     FORBIDDEN_ADMIN(HttpStatus.FORBIDDEN, "Auth-008", "관리자가 아닙니다."),
+    FORBIDDEN_MEMBER(HttpStatus.FORBIDDEN, "Auth-009", "회원이 아닙니다. 추가정보를 입력해 주세요."),
 
     // 회원
     INVALID_MEMBER_TYPE(HttpStatus.BAD_REQUEST, "User-001", "잘못된 회원 타입 입니다."),

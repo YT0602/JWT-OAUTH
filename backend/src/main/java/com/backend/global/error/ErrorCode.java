@@ -21,9 +21,9 @@ public enum ErrorCode {
     // 회원
     INVALID_MEMBER_TYPE(HttpStatus.BAD_REQUEST, "User-001", "잘못된 회원 타입 입니다."),
     ALREADY_REGISTERED_MEMBER(HttpStatus.BAD_REQUEST, "User-002", "이미 가입된 회원 입니다."),
-    DUPLICATE_PHONE_NUMBER(HttpStatus.BAD_REQUEST, "User-003", "이미 등록된 번호입니다."),
-    MEMBER_NOT_EXISTS(HttpStatus.BAD_REQUEST, "User-004", "해당 회원은 존재하지 않습니다."),
-    DUPLICATE_LOGIN_ID(HttpStatus.BAD_REQUEST, "User-005", "해당 아이디는 이미 존재합니다."),
+    ALREADY_REGISTERED_NICKNAME(HttpStatus.BAD_REQUEST, "User-003", "이미 등록된 닉네임입니다."),
+    DUPLICATE_PHONE_NUMBER(HttpStatus.BAD_REQUEST, "User-004", "이미 등록된 번호입니다."),
+    MEMBER_NOT_EXISTS(HttpStatus.BAD_REQUEST, "User-005", "해당 회원은 존재하지 않습니다."),
     UNAVAILABLE_LOGIN_ID(HttpStatus.BAD_REQUEST, "User-006", "사용할 수 없는 아이디입니다."),
     UNAUTHORIZED(HttpStatus.UNAUTHORIZED, "User-007", "인증에 실패하였습니다."),
     ROLE_NOT_EXISTS(HttpStatus.FORBIDDEN, "User-008", "해당 권한이 없습니다."),

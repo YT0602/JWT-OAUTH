@@ -24,6 +24,7 @@ public class MemberDto {
 
     @Getter
     public static class UpdateRequest {
+        private String email;
         private String nickname;
         private String profile_image;
         private String phone_number;

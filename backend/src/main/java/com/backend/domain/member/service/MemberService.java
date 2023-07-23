@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Optional;
 
@@ -18,9 +19,6 @@ import java.util.Optional;
 @Transactional
 @RequiredArgsConstructor
 public class MemberService {
-
-    @Value("${jwt.secretKey}")
-    private String secretKey;
 
     private final MemberRepository memberRepository;
 
@@ -46,8 +44,8 @@ public class MemberService {
     public Member findMemberByRefreshToken(String refreshToken) {
         Member member = memberRepository.findByRefreshToken(refreshToken)
                 .orElseThrow(() -> new AuthenticationException(ErrorCode.REFRESH_TOKEN_NOT_FOUND));
-        Date expiryDate = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(refreshToken).getBody().getExpiration();
-        if(expiryDate.before(new Date())) {
+        LocalDateTime tokenExpirationTime = member.getTokenExpirationTime();
+        if(tokenExpirationTime.isBefore(LocalDateTime.now())) {
             throw new AuthenticationException(ErrorCode.REFRESH_TOKEN_EXPIRED);
         }
         return member;

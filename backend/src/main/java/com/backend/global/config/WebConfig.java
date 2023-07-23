@@ -48,7 +48,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .order(1) // 가장 먼저 인증 인터셉터가 실행
                 .addPathPatterns("/api/**")
                 .excludePathPatterns("/api/oauth/login",
-                        "/api/access-token/issue",
+                        "/api/access-token/re",
                         "/api/logout",
                         "/api/feign/**");
 

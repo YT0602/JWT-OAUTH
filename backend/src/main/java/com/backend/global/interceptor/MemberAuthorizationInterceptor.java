@@ -28,7 +28,7 @@ public class MemberAuthorizationInterceptor implements HandlerInterceptor {
         Claims tokenClaims = tokenManager.getTokenClaims(accessToken);
         String role = (String) tokenClaims.get("role");
         if (!Role.MEMBER.equals(Role.valueOf(role))) {
-            throw new AuthenticationException(ErrorCode.FORBIDDEN_ADMIN);
+            throw new AuthenticationException(ErrorCode.FORBIDDEN_MEMBER);
         }
 
         return true;

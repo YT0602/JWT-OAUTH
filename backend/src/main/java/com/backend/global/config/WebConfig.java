@@ -52,11 +52,13 @@ public class WebConfig implements WebMvcConfigurer {
                         "/api/logout",
                         "/api/feign/**");
 
-//        registry.addInterceptor(memberAuthorizationInterceptor)
-//                .order(2)
-//                .addPathPatterns("/api/**")
-//                .excludePathPatterns("/api/member/additional",
-//                        "api/oauth/login");
+        registry.addInterceptor(memberAuthorizationInterceptor)
+                .order(2)
+                .addPathPatterns("/api/**")
+                .excludePathPatterns("/api/member/additional",
+                        "/api/access-token/re",
+                        "/api/logout",
+                        "/api/oauth/login");
 
 //        registry.addInterceptor(adminAuthorizationInterceptor)
 //                .order(2)

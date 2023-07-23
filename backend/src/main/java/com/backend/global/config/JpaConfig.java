@@ -14,6 +14,7 @@ import java.util.Optional;
 @EnableJpaAuditing
 public class JpaConfig {
 
+    // Jpa Auditing 설정
     @Bean
     public AuditorAware<String> auditorAware() {
         return new AuditorAware<String>() {

@@ -2,6 +2,7 @@ package com.backend.global.config;
 
 import com.backend.global.interceptor.AdminAuthorizationInterceptor;
 import com.backend.global.interceptor.AuthenticationInterceptor;
+import com.backend.global.interceptor.MemberAuthorizationInterceptor;
 import com.backend.global.resolver.memberInfo.MemberInfoArgumentResolver;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,7 @@ public class WebConfig implements WebMvcConfigurer {
     private final AuthenticationInterceptor authenticationInterceptor;
     private final AdminAuthorizationInterceptor adminAuthorizationInterceptor;
     private final MemberInfoArgumentResolver memberInfoArgumentResolver;
+    private final MemberAuthorizationInterceptor memberAuthorizationInterceptor;
     private final ObjectMapper objectMapper;
 
     @Override
@@ -39,6 +41,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .maxAge(3600); // preflight 시간 설정
     }
 
+    // HTTP 요청을 처리하는 과정에 인터셉터를 추가
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authenticationInterceptor)
@@ -47,13 +50,20 @@ public class WebConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/api/oauth/login",
                         "/api/access-token/issue",
                         "/api/logout",
-                        "/api/feign");
+                        "/api/feign/**");
+
+//        registry.addInterceptor(memberAuthorizationInterceptor)
+//                .order(2)
+//                .addPathPatterns("/api/**")
+//                .excludePathPatterns("/api/member/additional",
+//                        "api/oauth/login");
 
 //        registry.addInterceptor(adminAuthorizationInterceptor)
 //                .order(2)
 //                .addPathPatterns("/api/admin/**");
     }
 
+    // 컨트롤러 메서드의 매개변수를 해석 ( JWT 해석해서 정보 추출)
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
         resolvers.add(memberInfoArgumentResolver);

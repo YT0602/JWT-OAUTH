@@ -27,6 +27,7 @@ public class MemberInfoArgumentResolver implements HandlerMethodArgumentResolver
         return hasMemberInfoAnnotation && hasMemberInfoDto;
     }
 
+    // 요청 헤더에서 JWT 토큰을 추출하고, 해당 토큰에서 필요한 정보(이메일과 역할)를 가져와 MemberInfoDto 객체를 생성하는 작업을 담당
     @Override
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
         HttpServletRequest request = (HttpServletRequest) webRequest.getNativeRequest();

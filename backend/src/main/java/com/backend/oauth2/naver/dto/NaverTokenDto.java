@@ -5,6 +5,7 @@ import lombok.Getter;
 
 public class NaverTokenDto {
 
+    // 토큰 요청 객체
     @Builder @Getter
     public static class Request {
 
@@ -15,6 +16,7 @@ public class NaverTokenDto {
         private String state;
     }
 
+    // 응답 객체
     @Builder @Getter
     public static class Response {
 

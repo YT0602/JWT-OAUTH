@@ -15,6 +15,7 @@ public class NaverUserInfoResponseDto {
 
     private Response response;
 
+    // 회원 정보 요청 결과
     @Getter @Setter
     public static class Response {
 

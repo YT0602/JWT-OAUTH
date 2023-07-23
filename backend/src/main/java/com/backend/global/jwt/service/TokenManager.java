@@ -27,12 +27,14 @@ public class TokenManager {
 
     public JwtDto createJwtDto(String email, Role role){
 
+        // 토큰 만료 시간
         Date accessTokenExpirationPeriod = createAccessTokenExpirationPeriod();
         Date refreshTokenExpirationPeriod = createRefreshTokenExpirationPeriod();
 
         String accessToken = createAccessToken(email, role, accessTokenExpirationPeriod);
         String refreshToken = createRefreshToken(email, refreshTokenExpirationPeriod);
 
+        // 액세스, 리프레시 토큰 담아서 반환
         return JwtDto.builder()
                 .grantType(GrantType.BEARER.getType())
                 .accessToken(accessToken)
@@ -106,6 +108,4 @@ public class TokenManager {
         }
         return claims;
     }
-
-
 }

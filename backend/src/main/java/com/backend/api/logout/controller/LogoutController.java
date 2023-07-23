@@ -17,8 +17,10 @@ public class LogoutController {
 
     private final LogoutService logoutService;
 
+    // 로그아웃
     @PostMapping("/logout")
     public ResponseEntity<String> logout(HttpServletRequest httpServletRequest) {
+        // 헤더 검증
         String authorizationHeader = httpServletRequest.getHeader("Authorization");
         AuthorizationHeaderUtils.validateAuthorization(authorizationHeader);
 

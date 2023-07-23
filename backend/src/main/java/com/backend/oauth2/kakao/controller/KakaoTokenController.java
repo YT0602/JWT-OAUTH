@@ -19,11 +19,13 @@ public class KakaoTokenController {
     @Value("${kakao.client.secret}")
     private String clientSecret;
 
+    // 로그인 폼
     @GetMapping("/login")
     public String login() {
         return "loginForm";
     }
 
+    // 인가코드 콜백 결과 ( 토큰값 있음)
     @GetMapping("/oauth/kakao/callback")
     public @ResponseBody String loginCallback(String code) {
         String contentType = "application/x-www-form-urlencoded;charset=utf-8";

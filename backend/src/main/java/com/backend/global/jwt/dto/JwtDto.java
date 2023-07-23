@@ -12,6 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class JwtDto {
 
+    // JWT 응답시 형식
     private String grantType;
 
     private String accessToken;

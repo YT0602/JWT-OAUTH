@@ -6,6 +6,7 @@ import lombok.ToString;
 
 public class KakaoTokenDto {
 
+    // 토큰 요청시
     @Builder
     @Getter
     public static class Request{
@@ -16,6 +17,7 @@ public class KakaoTokenDto {
         private String code;
     }
 
+    // 토큰 응답 결과
     @ToString
     @Builder
     @Getter

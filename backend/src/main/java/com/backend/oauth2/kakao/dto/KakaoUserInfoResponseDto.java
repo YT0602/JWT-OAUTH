@@ -13,6 +13,7 @@ public class KakaoUserInfoResponseDto {
     @JsonProperty("kakao_account")
     private KakaoAccount kakaoAccount;
 
+    // account 안에 이메일, 프로필 있고 프로필안에 닉네임 프사 있음
     @Getter
     @Setter
     public static class KakaoAccount {

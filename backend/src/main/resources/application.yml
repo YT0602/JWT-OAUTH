@@ -52,8 +52,8 @@ naver:
 
 kakao:
   client:
-    id: ENC(EmgRo3YTbDmCZEJghq+BeivOv9ShLIzXVKJHMmha7SR2kXIMJPQhm/DG7htIDkNG)
-    secret: ENC(NbmYwL9i5temYadjPF/m95Hsxos7JBh/8tLdH7qyl1XBesRSL2SNJGdGiSuJHn6u)
+    id: ENC(mPmSxLIS51lh6f0v1CBS/KmRHV5kkYVHcb3V4T7kkU2IBUKijH8UnVEAp5mlRIq4)
+    secret: ENC(m6LDkg35hfSU7cZphFTdbPpYPN7xym+oUOkUuDKyDT52LsBn6FHo1LAlFYdHd+cE)
 
 jwt:
   secretKey: ENC(iQq+RZEWJxFt9jjYj5+d2N3seDskGpN904QWRXFDc/svnyjlWzEnGg==)

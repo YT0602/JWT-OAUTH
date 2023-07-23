@@ -1,4 +1,4 @@
-package com.backend.domain.member.dto;
+package com.backend.api.member.dto;
 
 import com.backend.domain.member.constant.Role;
 import com.backend.domain.member.constant.SocialType;
@@ -6,12 +6,10 @@ import com.backend.domain.member.entity.Member;
 import lombok.Builder;
 import lombok.Getter;
 
-import javax.persistence.*;
-import java.time.LocalDateTime;
-
 @Getter
 @Builder
 public class MemberInfoResponseDto {
+    // 회원 정보 조회 Dto
 
     private Long memberId;
 

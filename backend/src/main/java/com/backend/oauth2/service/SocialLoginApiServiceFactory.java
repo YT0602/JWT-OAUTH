@@ -14,6 +14,7 @@ public class SocialLoginApiServiceFactory {
         this.socialLoginApiServices = socialLoginApiServices;
     }
 
+    // 소셜 타입에 맞춰서 저장
     public static SocialLoginApiService getSocialLoginApiService(SocialType socialType) {
         String socialLoginApiServiceBeanName = "";
 

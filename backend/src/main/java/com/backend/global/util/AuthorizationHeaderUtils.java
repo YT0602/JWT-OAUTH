@@ -7,6 +7,7 @@ import org.springframework.util.StringUtils;
 
 public class AuthorizationHeaderUtils {
 
+    // 헤더 검증
     public static void validateAuthorization(String authorizationHeader) {
 
         // 1. authorizationHeader 필수 체크

@@ -20,6 +20,7 @@ public class NaverLoginApiServiceImpl implements SocialLoginApiService {
 
     private final NaverUserInfoClient naverUserInfoClient;
 
+    // 네이버에서 받은 정보를 회원등록 폼에 맞춰서 반환
     @Override
     public OauthAttributes getUserInfo(String accessToken) {
         NaverUserInfoResponseDto naverUserInfoResponseDto = naverUserInfoClient.getNaverUserInfo(GrantType.BEARER.getType() + " " + accessToken);

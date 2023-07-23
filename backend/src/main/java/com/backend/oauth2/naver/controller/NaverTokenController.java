@@ -20,6 +20,7 @@ public class NaverTokenController {
     @Value("${naver.client.secret}")
     private String clientSecret;
 
+    // 인가코드 콜백 결과
     @GetMapping("/oauth/naver/callback")
     public @ResponseBody String loginCallback(String code) {
         NaverTokenDto.Request naverTokenRequestDto = NaverTokenDto.Request.builder()

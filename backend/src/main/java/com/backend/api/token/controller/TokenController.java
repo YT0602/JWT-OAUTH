@@ -19,11 +19,13 @@ public class TokenController {
     private final TokenService tokenService;
 
     // refresh token 날아감
-    @PostMapping("/access-token/issue")
+    @PostMapping("/access-token/re")
     public ResponseEntity<AccessTokenResponseDto> createAccessToken(HttpServletRequest httpServletRequest) {
+        // 헤더 검증
         String authorizationHeader = httpServletRequest.getHeader("Authorization");
         AuthorizationHeaderUtils.validateAuthorization(authorizationHeader);
 
+        // refresh 추출 후 토큰 재발급으로 이동
         String refreshToken = authorizationHeader.split(" ")[1];
         AccessTokenResponseDto accessTokenResponseDto = tokenService.createAccessTokenByRefreshToken(refreshToken);
         return ResponseEntity.ok(accessTokenResponseDto);

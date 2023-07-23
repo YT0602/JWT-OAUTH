@@ -28,8 +28,9 @@ public class KakaoLoginApiServiceImpl implements SocialLoginApiService {
         KakaoUserInfoResponseDto.KakaoAccount kakaoAccount = kakaoUserInfoResponseDto.getKakaoAccount();
         String email = kakaoAccount.getEmail();
 
+        // 받은 정보로 회원 등록 폼에 맞춰 반환
         return OauthAttributes.builder()
-                .email(!StringUtils.hasText(email) ? kakaoUserInfoResponseDto.getId() : email)
+                .email(!StringUtils.hasText(email) ? kakaoUserInfoResponseDto.getId() : email) // 카카오는 이메일 받아오기 안돼서 일단 ID를 이메일에 저장
                 .nickname(kakaoAccount.getProfile().getNickname())
                 .socialType(SocialType.KAKAO)
                 .build();

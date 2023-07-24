@@ -1,6 +1,8 @@
 package com.backend.domain.member.entity;
 
 import com.backend.domain.common.BaseEntity;
+import com.backend.domain.member.constant.ProfileColor;
+import com.backend.domain.member.constant.ProfileFace;
 import com.backend.domain.member.constant.Role;
 import com.backend.domain.member.constant.SocialType;
 import com.backend.global.jwt.dto.JwtDto;
@@ -26,19 +28,18 @@ public class Member extends BaseEntity {
     @Column(unique = true, nullable = false, length = 20)
     private String email;
 
-    private String password;
-
     @Column(length = 30)
     private String nickname;
 
-    private String profile_image;
+    @Enumerated(EnumType.STRING)
+    private ProfileFace profileFace;
 
-    @Column(length = 20)
-    private String phone_number;
+    @Enumerated(EnumType.STRING)
+    private ProfileColor profileColor;
 
     private String wallet;
 
-    private int stamp_cnt;
+    private int coinCount;
 
     @Enumerated(EnumType.STRING)
     private SocialType socialType;
@@ -58,15 +59,17 @@ public class Member extends BaseEntity {
         this.nickname = updateNickname;
     }
 
-    public void updateProfileImage(String profile_image){
-        this.profile_image = profile_image;
-    }
-    public void updatePhoneNumber(String phone_number) {
-        this.phone_number = phone_number;
+    public void updateProfileCOLOR(ProfileColor profileColor){
+        this.profileColor = profileColor;
     }
 
-    public void updateStamp_cnt(int stamp_cnt){
-        this.stamp_cnt = stamp_cnt;
+    public void updateProfileFace(ProfileFace profileFace){
+        this.profileFace = profileFace;
+    }
+
+
+    public void updateCoinCount(int coinCount){
+        this.coinCount = coinCount;
     }
 
     public void updateRole(Role role){
@@ -83,15 +86,14 @@ public class Member extends BaseEntity {
     }
 
     @Builder
-    public Member(SocialType socialType, String email, String password, String nickname, String phone_number, int stamp_cnt,
-                  String profile_image, Role role) {
+    public Member(SocialType socialType, String email, String nickname,  int coinCount,
+                  ProfileColor profileColor, ProfileFace profileFace,Role role) {
         this.socialType = socialType;
         this.email = email;
-        this.password = password;
         this.nickname = nickname;
-        this.profile_image = profile_image;
-        this.phone_number = phone_number;
-        this.stamp_cnt = stamp_cnt;
+        this.profileColor = profileColor;
+        this.profileFace = profileFace;
+        this.coinCount = coinCount;
         this.role = role;
     }
 

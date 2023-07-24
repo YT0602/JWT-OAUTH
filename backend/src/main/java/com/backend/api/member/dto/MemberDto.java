@@ -1,8 +1,6 @@
 package com.backend.api.member.dto;
 
-import com.backend.domain.member.constant.Role;
 import lombok.*;
-import org.springframework.stereotype.Service;
 
 @Getter
 @Setter

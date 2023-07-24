@@ -1,7 +1,6 @@
 package com.backend.api.login.service;
 
 import com.backend.api.login.dto.OauthLoginDto;
-import com.backend.domain.member.constant.Role;
 import com.backend.domain.member.constant.SocialType;
 import com.backend.domain.member.entity.Member;
 import com.backend.domain.member.service.MemberService;

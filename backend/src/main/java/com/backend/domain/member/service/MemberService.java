@@ -5,14 +5,11 @@ import com.backend.domain.member.repository.MemberRepository;
 import com.backend.global.error.ErrorCode;
 import com.backend.global.error.exception.AuthenticationException;
 import com.backend.global.error.exception.BusinessException;
-import io.jsonwebtoken.Jwts;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.Optional;
 
 @Service

@@ -10,15 +10,12 @@ import com.backend.domain.member.repository.MemberRepository;
 import com.backend.domain.member.service.MemberService;
 import com.backend.global.error.ErrorCode;
 import com.backend.global.error.exception.BusinessException;
-import com.backend.global.jwt.service.TokenManager;
 import com.backend.global.resolver.memberInfo.MemberInfo;
 import com.backend.global.resolver.memberInfo.MemberInfoDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController

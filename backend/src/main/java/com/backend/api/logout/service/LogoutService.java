@@ -1,6 +1,5 @@
 package com.backend.api.logout.service;
 
-import com.backend.api.token.service.TokenService;
 import com.backend.domain.member.entity.Member;
 import com.backend.domain.member.service.MemberService;
 import com.backend.global.error.ErrorCode;

@@ -4,7 +4,6 @@ import com.backend.api.member.dto.MemberDto;
 import com.backend.api.member.dto.MemberInfoResponseDto;
 import com.backend.domain.member.constant.Role;
 import com.backend.domain.member.entity.Member;
-import com.backend.domain.member.repository.MemberRepository;
 import com.backend.domain.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

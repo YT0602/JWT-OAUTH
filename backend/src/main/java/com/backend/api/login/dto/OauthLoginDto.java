@@ -3,7 +3,6 @@ package com.backend.api.login.dto;
 import com.backend.global.jwt.dto.JwtDto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
-import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
